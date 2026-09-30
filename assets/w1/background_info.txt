@@ -1,0 +1,4 @@
+In Everplast, a background asset pack is used. These backgrounds are prototype backgrounds that can be used to test certain enviornments or setup something quickly.
+
+Here are the backgrounds used in the live game:
+https://itch.io/s/63033/winter-sale-2021-pt

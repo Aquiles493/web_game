@@ -1,0 +1,31 @@
+name: Deploy Godot Web
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Instalar Godot (latest)
+        uses: chickensoft-games/setup-godot@v1
+        with:
+          godot-version: "4.3"
+
+      - name: Exportar Web
+        run: |
+          mkdir -p dist
+          godot --headless --export-release "Web" dist/index.html
+
+      - name: Deploy a Cloudflare Pages
+        uses: cloudflare/pages-action@v1
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          projectName: "web"
+          directory: dist
