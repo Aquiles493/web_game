@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://b48gu0qfih5tn"]
+
+[ext_resource type="Texture2D" uid="uid://bi8tm2frywvvd" path="res://assets/Pixel Adventure 1/Free/Main Characters/Ninja Frog/Idle (32x32).png" id="1_rp718"]
+
+[sub_resource type="Animation" id="Animation_yewv4"]
+resource_name = "idle"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_76oj4"]
+_data = {
+&"idle": SubResource("Animation_yewv4")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gf7gv"]
+size = Vector2(13, 22)
+
+[node name="player" type="CharacterBody2D" unique_id=1994846555]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1337315097]
+texture = ExtResource("1_rp718")
+hframes = 11
+
+[node name="AnimationTree" type="AnimationTree" parent="Sprite2D" unique_id=2135309903]
+libraries/ = SubResource("AnimationLibrary_76oj4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1203627203]
+position = Vector2(0.5, 4)
+shape = SubResource("RectangleShape2D_gf7gv")
