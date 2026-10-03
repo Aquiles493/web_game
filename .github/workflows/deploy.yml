@@ -12,10 +12,10 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Instalar Godot (latest)
+      - name: Instalar Godot
         uses: chickensoft-games/setup-godot@v1
         with:
-          godot-version: "latest"
+          version: "4.7.2"
 
       - name: Exportar Web
         run: |
