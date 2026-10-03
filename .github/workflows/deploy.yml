@@ -16,6 +16,7 @@ jobs:
         uses: chickensoft-games/setup-godot@v1
         with:
           version: "4.7.2"
+          use-dotnet: false
 
       - name: Exportar Web
         run: |
